@@ -35,7 +35,8 @@ def _env_set(key: str, default: set[str]) -> set[str]:
 
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-DB_PATH: str = _env("DB_PATH", "project_tracker.db")
+PROJECT_ROOT = Path(__file__).parent.resolve()
+DB_PATH: str = str(PROJECT_ROOT / _env("DB_PATH", "project_tracker.db"))
 
 UPLOADS_DIR = Path(_env("UPLOADS_DIR", "uploads"))
 UPLOADS_DIR.mkdir(exist_ok=True)

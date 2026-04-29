@@ -8,7 +8,7 @@ from typing import Optional
 
 import streamlit as st
 
-from constants import DEFAULT_LANGUAGE, LANGUAGE_STATE_KEY, MIN_PASSWORD_LEN
+from constants import DB_PATH, DEFAULT_LANGUAGE, LANGUAGE_STATE_KEY, MIN_PASSWORD_LEN
 from db import get_conn
 from i18n import is_english_ui, patch_streamlit_i18n, render_language_selector
 from models import (
@@ -230,7 +230,7 @@ def main() -> None:
     st.title(_t("🗂️ Bitirme Proje Takip Uygulaması"))
 
     # ── DB setup ──────────────────────────────────────────────────────────────
-    db_path = "project_tracker.db"
+    db_path = DB_PATH
     with st.sidebar:
         st.caption(f"{_t('Veritabani:')} {db_path}")
     conn = get_conn(db_path)
