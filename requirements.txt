@@ -1,0 +1,6 @@
+streamlit>=1.36
+pandas>=2.0
+python-dotenv>=1.0
+streamlit-cookies-controller>=0.0.3
+# Ollama integration uses Python's built-in urllib — no additional packages required.
+# Ensure Ollama is running locally: https://ollama.com
